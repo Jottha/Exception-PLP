@@ -1,0 +1,25 @@
+package teste;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import exercicio.ContaCorrente;
+
+public class TestContaCorrente
+{	
+	private ContaCorrente contaCorrente;
+	
+	@Before
+	public void instaciaContaCorrente()
+	{	
+		contaCorrente = new ContaCorrente();
+	}
+	
+	@Test
+	public void testDepositar()
+	{
+		
+	}
+	
+
+}

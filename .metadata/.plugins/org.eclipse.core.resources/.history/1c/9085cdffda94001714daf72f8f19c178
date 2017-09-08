@@ -1,0 +1,17 @@
+package teste;
+
+import exercicio.ContaCorrente;
+
+public class TestContaCorrente
+{	
+	private ContaCorrente contaCorrente;
+	
+	@Before
+	public void instaciaContaCorrente()
+	{	
+		contaCorrente = new ContaCorrente();
+			
+	}
+	
+
+}

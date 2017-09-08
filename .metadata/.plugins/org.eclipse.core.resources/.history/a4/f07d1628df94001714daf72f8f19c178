@@ -1,0 +1,54 @@
+package teste;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import exercicio.ContaCorrente;
+import exercicio.DepositoInvalidoException;
+import exercicio.SaldoInvalidoException;
+import exercicio.SaqueNegativoInvalidoException;
+import exercicio.ValorLimiteException;
+
+public class TestContaCorrente
+{	
+	private ContaCorrente contaCorrente;
+	
+	@Before
+	public void instaciaContaCorrente()
+	{	
+		contaCorrente = new ContaCorrente();
+	}
+	
+	@Test
+	public void testandoContaCorrente() throws SaldoInvalidoException
+	{	
+		 try 
+		 {	
+			float valor = 10;
+	        contaCorrente.depositar(valor);
+	        
+	     } catch (DepositoInvalidoException e) 
+	     {	
+	    	System.err.println(e.getMessage());
+	     }
+		 
+		 try 
+		 {	float valor = -11;
+	        contaCorrente.sacar(valor);
+	        
+	     } catch (SaqueNegativoInvalidoException e) 
+	     {	
+	    	System.err.println(e.getMessage());
+	     }
+		 
+		 try 
+		 {	
+			float valorLimite = -1;
+	        contaCorrente.setValorLimite(valorLimite);
+	        
+	     } catch (ValorLimiteException e) 
+	     {	
+	    	System.err.println(e.getMessage());
+	     }	
+	}
+}

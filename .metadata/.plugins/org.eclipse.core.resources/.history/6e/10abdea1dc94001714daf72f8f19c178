@@ -1,0 +1,49 @@
+package teste;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import exercicio.ContaCorrente;
+
+public class TestContaCorrente
+{	
+	private ContaCorrente contaCorrente;
+	
+	@Before
+	public void instaciaContaCorrente()
+	{	
+		contaCorrente = new ContaCorrente();
+	}
+	
+	@Test
+	public void testandoContaCorrente()
+	{	
+		 try {
+	            float valor = 10;
+	            float saldo;
+	            saldo = 100;
+	            
+	            contaCorrente.depositar(valor);
+	            
+	        } catch (DepositoInvalidoException e) {
+	            System.err.println("erro " + e.getMessage());
+	        }
+	        try {
+	            float valor = 10;
+	            float saldo = 100;
+	            
+	            cc.sacar(valor);
+	        } catch (IllegalArgumentException e) {
+	            System.err.println("erro " + e.getMessage());
+	        }
+	        try {
+	            cc.setValorLimite(100);
+	        } catch (IllegalArgumentException e) {
+	            System.err.println("erro " + e.getMessage());
+	        }
+	    }
+		
+	}
+	
+
+}

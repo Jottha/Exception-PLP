@@ -6,7 +6,7 @@ public class ValorLimiteException extends Exception
 	
 	public ValorLimiteException()
 	{
-		super("Você não pode sacar assima de ");
+		super("O Valor Limite não pode ser negativo");
 	}
 
 }

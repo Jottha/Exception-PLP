@@ -1,0 +1,74 @@
+package exercicio;
+
+public class ContaCorrente
+{	
+	private float limte;
+	private float saldo;
+	private float valorLimite;
+	private float montante;
+	private float valor;
+	
+	public ContaCorrente(float limte, 
+			float saldo, float valorLimite, float valor) 
+	{
+		super();
+		this.limte = limte;
+		this.saldo = saldo;
+		this.valorLimite = valorLimite;
+		this.valor = valor;
+		
+	}
+	
+	public void sacar(float valor) throws SaldoInvalidoException
+	{	if(valor > saldo)
+		{	
+			throw new SaldoInvalidoException();
+		}
+		saldo -= montante;	
+	}
+	
+	public void depositar(float valor) throws DepositoInvalidoException
+	{	
+		if(valor > 0)
+		{	
+			throw new DepositoInvalidoException();
+		}
+		saldo += valor;
+	}
+	
+	public void setValorLimite(float valorLimite) throws  ValorLimiteException
+	{	
+		if(valorLimite > 0)
+		{	
+			throw new ValorLimiteException();
+		}
+		this.valorLimite = valorLimite;
+	}
+	
+	public float getValorLimite() 
+	{
+		return valorLimite;
+	}
+	
+	
+	public float getLimte() 
+	{
+		return limte;
+	}
+	
+	public void setLimte(float limite) 
+	{
+		this.limte = limite;
+	}
+	
+	public float getSaldo() 
+	{
+		return saldo;
+	}
+	
+	public void setSaldo(float saldo) 
+	{
+		this.saldo = saldo;
+	}
+
+}
