@@ -19,7 +19,7 @@ public class ContaCorrente
 		
 	}
 	
-	public void sacar(float valor) throws SaldoInvalidoException
+	public void sacar(float valor) throws SaldoInvalidoException , ValorLimiteException
 	{	if(valor > saldo)
 		{	
 			throw new SaldoInvalidoException();
@@ -27,16 +27,12 @@ public class ContaCorrente
 		saldo -= montante;	
 	}
 	
-	public void depositar(float valor) throws DepositoInvalidoException
+	public void depositar(float valor)
 	{	
-		if(valor > 0)
-		{	
-			throw new DepositoInvalidoException();
-		}
 		saldo += valor;
 	}
 	
-	public void setValorLimite(float valorLimite) throws  ValorLimiteException
+	public void setValorLimite(float valorLimite) 
 	{	
 		if(valor > valorLimite)
 		{	

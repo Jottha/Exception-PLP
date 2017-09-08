@@ -19,37 +19,22 @@ public class ContaCorrente
 		
 	}
 	
-	public void sacar(float valor) throws SaldoInvalidoException
+	public void sacar(float valor) throws SaldoInvalidoException , ValorLimiteException
 	{	if(valor > saldo)
 		{	
 			throw new SaldoInvalidoException();
 		}
-		saldo -= montante;	
-	}
-	
-	public void depositar(float valor) throws DepositoInvalidoException
-	{	
-		if(valor > 0)
-		{	
-			throw new DepositoInvalidoException();
-		}
-		saldo += valor;
-	}
-	
-	public void setValorLimite(float valorLimite) throws  ValorLimiteException
-	{	
 		if(valor > valorLimite)
 		{	
 			throw new ValorLimiteException();
 		}
-		this.valorLimite = valorLimite;
+		saldo -= montante;	
 	}
 	
-	public float getValorLimite() 
-	{
-		return valorLimite;
+	public void depositar(float valor)
+	{	
+		saldo += valor;
 	}
-	
 	
 	public float getLimte() 
 	{
@@ -69,6 +54,16 @@ public class ContaCorrente
 	public void setSaldo(float saldo) 
 	{
 		this.saldo = saldo;
+	}
+	
+	public float getValorLimite() 
+	{
+		return valorLimite;
+	}
+	
+	public void setValorLimite(float valorLimite) 
+	{
+		this.valorLimite = valorLimite;
 	}
 
 }
