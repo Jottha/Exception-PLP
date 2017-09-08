@@ -1,0 +1,12 @@
+package exercicio;
+
+public class ValorLimiteException
+{	
+	private static final long serialVersionUID = 1L;
+	
+	public ValorLimiteException()
+	{
+		super("Você não pode sacar assima de ");
+	}
+
+}
